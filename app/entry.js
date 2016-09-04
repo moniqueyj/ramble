@@ -25,6 +25,9 @@ angular.module('ramble', [ngRoute])
   .when('/new/post', {
     template: require('./view/new-post/new-post.html')
   })
+  .when('/post/:id', {
+    template: require('./view/entry/entry.html')
+  })
   .when('/dashboard', {
     template: require('./view/dashboard/dashboard.html')
   });
@@ -40,6 +43,7 @@ require('./component/nav');
 require('./component/create-post');
 require('./component/entry-list');
 require('./component/entry-list-item');
+require('./component/lrg-entry');
 
 // angular controllers
 require('./view/signup/signup-controller.js');

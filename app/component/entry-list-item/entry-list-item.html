@@ -1,3 +1,7 @@
-<div>
-  <h1>{{$ctrl.entry.title}}</h1>
+<div class="entry-list-item" ng-show="$ctrl.showMe">
+  <container>
+    <h2><a ng-href='/#/post/{{$ctrl.entry._id}}'>{{$ctrl.entry.title}}</a></h2>
+    <p>{{$ctrl.bodyPreview}}</p>
+    <i ng-click="$ctrl.deletePost()" class="fa fa-trash-o" aria-hidden="true"></i>
+  <container>
 </div>
