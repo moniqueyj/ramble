@@ -1,6 +1,6 @@
 <ramble-nav-bar></ramble-nav-bar>
 <div class="signup-page">
-  <form class="app-signup" novalidate ng-submit="signupCtrl.signup()">
+  <form class="app-signup" novalidate ng-submit="signupCtrl.signup()" name="signupForm">
     <section class="form-group">
       <label for="email">EMAIL : </label>
       <span class="label label-danger" ng-show="submitted && signForm.email.$error.required">Required!</span>
