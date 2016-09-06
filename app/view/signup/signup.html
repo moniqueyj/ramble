@@ -3,13 +3,14 @@
   <form class="app-signup" novalidate ng-submit="signupCtrl.signup()" name="signupForm">
     <section class="form-group">
       <label for="email">EMAIL : </label>
-      <span class="label label-danger" ng-show="submitted && signForm.email.$error.required">Required!</span>
-      <span class="label label-danger" ng-show="submitted && signForm.$error.email">Invalid email!</span>
+      <span class="label label-danger" ng-show=" signupForm.email.$error.required">Required!</span>
+      <span class="label label-danger" ng-show="signupForm.$error.email">Invalid email!</span>
       <input class="form-control" email="email" type="text" ng-model="signupCtrl.user.user">
     </section>
     <section class="form-group">
       <label for="ramble-Signup-password">PASSWORD : </label>
-      <span class="label label-danger" ng-show="submitted && signForm.password.$error.required">Required!</span>
+      <span class="label label-danger" ng-show="submitted &&
+      signupForm.password.$error.required">Required!</span>
       <input class="form-control"
              ng-required ng-minlength="3"
              name="password"
