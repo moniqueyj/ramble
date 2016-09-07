@@ -12,7 +12,7 @@ ramble.component('rambleNavBar', {
     $log.debug('init SignoutCtrl');
     this.logout = function(){
       authService.logout()
-      .then(()=> $location.path('/login'));
+      .then(()=> $location.path('/signin'));
     };
   }
 });
