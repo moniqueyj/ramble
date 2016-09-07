@@ -29,7 +29,8 @@
     "beforeEach": false,
     "afterEach": false,
     "before": false,
-    "after": false
+    "after": false,
+    "__API_URL__": false
   },
   "ecmaFeatures": {
     "modules": true,

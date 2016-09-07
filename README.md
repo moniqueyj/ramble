@@ -1,4 +1,5 @@
 # ramble
+[![Stories in Ready](https://badge.waffle.io/ascasson/ramble.png?label=ready&title=Ready)](http://waffle.io/ascasson/ramble)
 
 # Front End (MVP)
 * Login / Signup -- `/signup` & `/signin`
