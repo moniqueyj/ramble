@@ -8,6 +8,7 @@ require('./scss/base.scss');
 const angular = require('angular');
 const ngRoute = require('angular-route');
 
+
 // angular modules
 angular.module('ramble', [ngRoute])
 .config(['$routeProvider', function($routeProvider){
@@ -51,3 +52,8 @@ require('./component/lrg-entry');
 // angular controllers
 require('./view/signup/signup-controller.js');
 require('./view/signin/signin-controller.js');
+
+//angular directives//
+// require('./directive/signin-directive.js');
+// require('./directive/signup-directive.js');
+require('./directive/pw-match-component.js');
