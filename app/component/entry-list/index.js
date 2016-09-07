@@ -11,10 +11,12 @@ ramble.component('rambleEntryList', {
   controllerAs: 'entryListCtrl'
 });
 
+
 ramble.controller('EntryListController', ['$log', '$location', 'rambleService', EntryListController]);
 
 function EntryListController($log, $location, rambleService){
   this.list = [];
+  this.showAll = false;
   this.getEntries = function() {
     rambleService.fetchEntries()
     .then(entries => {
@@ -24,31 +26,10 @@ function EntryListController($log, $location, rambleService){
   };
   this.limit = 5;
   this.loadMore = function(){
-    var increamented = this.limit + 5;
-    this.limit = increamented > this.list.length ? this.list.length : increamented;
+    var incremented = this.limit + 5;
+    this.limit = incremented > this.list.length ? this.list.length : incremented;
   };
-
-
-  // var listlength = this.list.length
-  // var listlengthPerPage = 5
-  // var listEntries = listlengthPerPage + 5;
-  // this.entriesPerPage = listEntries;
-  // this.pagedEntries=
-  //
-  // this.pagedEntries = Entry.get(this.currentPage*this.entriesPerPage, this.entriesPerPage);
-  //
-  // this.entriesPerPage = 5;
-  // this.currentPage = 0;
-  // this.total = Entry.total(); //Entry should be added as parameter
-  // this.loadMore = function(){
-  //   this.currentPage++;
-  //   var newEntries = Entry.get(this.currentPage*this.entriesPerPage, this.entriesPerPage);
-  //   this.list = this.list.concat(newEntries);
-  // };
-  // this.nextPageIdsabledClass = function(){
-  //   return this.currentPage === this.pageCount()-1 ? 'disabled':'';
-  // };
-  // this.pageCount = function(){
-  //   return Math.ceil(this.total/this.entriesPerPage);
-  // };
+  this.loadAll = function(){
+    this.showAll = true;
+  };
 }
