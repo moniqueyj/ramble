@@ -1,24 +1,53 @@
 @import "vendor/normalize.css";
 @import "vendor/font-awesome/scss/font-awesome.scss";
+@import "_theme.scss";
 
 body {
   background-color: #fff;
 }
 
 button {
-  width: 150px;
-  height: 75px;
+  font-size: 1.25em;
+  width: 80%;
+  height: 80%;
+  padding: 10px;
   margin: auto;
-
-  border-radius: 5px;
+  border: thin solid $app-purple-light;
+  color: $app-purple-light;
   background-color: white;
-  border: 1px solid black;
+  text-align: center;
+
+  &:hover {
+    color: $app-purple;
+    border: thin solid $app-purple;
+  }
 }
 
 input {
-  border-radius: 5px;
-  background-color: white;
-  border: 1px solid black;
+  border: none;
+  border-bottom: thin solid $app-light-grey;
+  margin: 5px;
+
+  &::-webkit-input-placeholder {
+    text-transform: capitalize;
+    color: $app-text-light;
+    opacity: 1;
+  }
+  &:-moz-placeholder {
+    text-transform: capitalize;
+    color: $app-text-light;
+    opacity: 1;
+  }
+  &::-moz-placeholder {
+    text-transform: capitalize;//for newer versions of Firefox
+    color: $app-text-light;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    text-transform: capitalize;
+    color: $app-text-light;
+    opacity: 1;
+  }
 }
 
 a {

@@ -2,13 +2,13 @@
 <div class="signup-page">
   <form class="app-signup form-auth" novalidate ng-submit="signupCtrl.signup()">
     <section class="form-group">
-      <label for="email">EMAIL : </label>
+      <label for="email">Email Address </label><br />
       <span class="label label-danger" ng-show="submitted && signForm.email.$error.required">Required!</span>
       <span class="label label-danger" ng-show="submitted && signForm.$error.email">Invalid email!</span>
       <input class="form-control" email="email" type="text" ng-model="signupCtrl.user.user">
     </section>
     <section class="form-group">
-      <label for="ramble-Signup-password">PASSWORD : </label>
+      <label for="ramble-Signup-password">Create Password </label><br />
       <span class="label label-danger" ng-show="submitted && signForm.password.$error.required">Required!</span>
       <input class="form-control"
              ng-required ng-minlength="3"
@@ -19,7 +19,7 @@
       >
     </section>
     <section class="form-group">
-      <label for="confirm">CONFIRM : </label>
+      <label for="confirm">Confirm Password</label><br />
       <input class="form-control" name="confirmPassword" type="password" compare-to="signupCtrl.user.password" ng-model="signupCtrl.user.confirmPassword">
       <div class="confirmPWMessage" ng-show="signupForm.$error">
         <span class="confirm-password-message-error" ng-show="signup.confirmPassword.$error.pwmatch">
