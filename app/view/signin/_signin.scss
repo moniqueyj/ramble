@@ -1,8 +1,13 @@
 @import "_theme";
 
+// TODO: What is this doing?
 .app-signin {
   form {
     padding: 10px;
     background-color: $app-light;
   }
+}
+
+p {
+  text-align: center;
 }

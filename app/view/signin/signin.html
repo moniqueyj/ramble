@@ -1,6 +1,6 @@
 <ramble-nav-bar></ramble-nav-bar>
 <div class="signin-page">
-  <form novalidate ng-init="signinCtrl.getToken()" ng-submit="signinCtrl.signin()" name="signinForm">
+  <form novalidate ng-init="signinCtrl.getToken()" ng-submit="signinCtrl.signin()" name="signinForm" class="form-auth">
     <section class="form-group">
       <label for="email"> EMAIL : </label>
       <span class="label label-danger" ng-show="submitted && signForm.email.$error.required">Required!</span>
@@ -13,8 +13,11 @@
       <input ng-minlength="3" class="form-control" name="password" type="password" ng-model="signinCtrl.user.password" required/>
     </section>
     <button type="submit" class="btn btn-default" ng-disabled="signForm.email.$dirty && signForm.email.$invalid ||
-  signForm.password.$dirty && signForm.password.$invalid">>
+  signForm.password.$dirty && signForm.password.$invalid">
       Sign in
     </button>
   </form>
+  <p>
+    Don't have an account? <a href="/#/signup">Sign up here!</a>
+  </p>
 </div>
