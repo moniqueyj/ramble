@@ -14,5 +14,9 @@ ramble.component('rambleNavBar', {
       authService.logout()
       .then(()=> $location.path('/signin'));
     };
+
+    this.newPost = function(){
+      $location.path('/new/post');
+    };
   }
 });
