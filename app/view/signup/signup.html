@@ -1,6 +1,6 @@
 <ramble-nav-bar></ramble-nav-bar>
 <div class="signup-page">
-  <form class="app-signup" novalidate ng-submit="signupCtrl.signup()" name="signupForm">
+  <form class="app-signup form-auth" novalidate ng-submit="signupCtrl.signup()">
     <section class="form-group">
       <label for="email">EMAIL : </label>
       <span class="label label-danger" ng-show=" signupForm.email.$error.required">Required!</span>
@@ -32,4 +32,7 @@
       Sign Up
     </button>
   </form>
+  <p>
+    Already have an account? <a href="/#/signin">Sign in here!</a>
+  </p>
 </div>

@@ -12,6 +12,9 @@ const ngRoute = require('angular-route');
 angular.module('ramble', [ngRoute])
 .config(['$routeProvider', function($routeProvider){
   $routeProvider
+  .when('/', {
+    redirectTo: '/signup'
+  })
   .when('/signup', {
     template: require('./view/signup/signup.html'),
     controller: 'SignupController',
