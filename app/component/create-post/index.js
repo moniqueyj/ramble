@@ -15,10 +15,6 @@ ramble.controller('NewPostController', ['$q', '$log', '$location', 'authService'
 
 function NewPostController($q, $log, $location, authService, rambleService) {
 
-  this.log = function() {
-    $log.info('logging something test');
-  };
-
   this.createEntry = function() {
     $log.info('creating post', this.post);
     rambleService.createEntry(this.post)

@@ -7,7 +7,41 @@ ramble.factory('rambleService', ['$log', '$q', '$http', 'authService', rambleSer
 
 function rambleService($log, $q, $http, authService) {
   let service = {};
-  
+
+  service.deleteEntry = function(entryId) {
+    return authService.getToken()
+    .then (token => {
+      let url = `${__API_URL__}/api/entry/${entryId}`;
+      let config = {
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${token}`
+        }
+      };
+
+      return $http.delete(url, config);
+    })
+    .then(res => $q.resolve(res.data))
+    .catch(err => $q.reject(err));
+  };
+
+  service.getEntry = function(entryId) {
+    return authService.getToken()
+    .then(token => {
+      let url = `${__API_URL__}/api/entry/${entryId}`;
+      let config = {
+        headers: {
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${token}`
+        }
+      };
+
+      return $http.get(url, config);
+    })
+    .then(res => $q.resolve(res.data))
+    .catch(err => $q.reject(err));
+  };
+
   service.fetchEntries = function() {
     return authService.getToken()
     .then(token => {
@@ -51,7 +85,6 @@ function rambleService($log, $q, $http, authService) {
       $log.info('error -- entries ', err);
       return $q.reject(err);
     });
-
   };
 
   return service;

@@ -3,9 +3,9 @@
 const angular = require('angular');
 const ramble = angular.module('ramble');
 
-ramble.factory('authService', ['$log', '$q', '$window', '$http', authService]);
+ramble.factory('authService', ['$location','$log', '$q', '$window', '$http', authService]);
 
-function authService($log, $q, $window, $http) {
+function authService($location, $log, $q, $window, $http) {
   let service = {};
   let token = null;
 
@@ -13,7 +13,9 @@ function authService($log, $q, $window, $http) {
     if (!_token) return $q.reject(new Error('token not found'));
     $window.localStorage.setItem('token', _token);
     token = _token;
-    return $q.resolve(token);
+    $q.resolve(token);
+    $location.path('dashboard');
+    return;
   }
 
   service.logout = function() {

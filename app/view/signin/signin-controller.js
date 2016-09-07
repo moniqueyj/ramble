@@ -11,7 +11,6 @@ ramble.controller('SigninController', ['$log', '$location', 'authService', Signi
 function SigninController($log, $location, authService) {
   $log.debug('init signinCtrl');
 
-
   this.getToken = function(){
     $log.debug('signinCtrl.getToken');
     authService.getToken()
