@@ -3,16 +3,14 @@
   <form novalidate ng-init="signinCtrl.getToken()" ng-submit="signinCtrl.signin()" name="signinForm" class="form-auth">
     <section class="form-group">
       <label for="email"> EMAIL : </label>
-      <span class="label label-danger" ng-show="submitted && signForm.email.$error.required">Required!</span>
-      <!-- <span class="label label-danger" ng-show="submitted && signForm.$error.email">Invalid email!</span>  -->
-
-      <span ng-show="signForm.email.$error.required">Email is required</span> 
-      <input class="form-control" name="email" type="email" ng-model="signinCtrl.user.username" reequired/>
+      <span class="label label-danger" ng-show="signinForm.email.$error.required">Required!</span>
+      <span class="label label-danger" ng-show="signinForm.$error.email">Invalid email!</span>
+      <input class="form-control" name="email" type="email" ng-model="$ctrl.user.username" required/>
     </section>
     <section class="form-group">
       <label for="password"> Password: </label>
-      <span class="label label-danger" ng-show="submitted && signForm.password.$error.required">Required!</span>
-      <input ng-minlength="3" class="form-control" name="password" type="password" ng-model="signinCtrl.user.password" required/>
+      <span class="label label-danger" ng-show="signinForm.password.$error.required">Required!</span>
+      <input ng-minlength="3" class="form-control" name="password" type="password" ng-model="$ctrl.user.password" required/>
     </section>
     <button type="submit" class="btn btn-default" ng-disabled="signForm.email.$dirty && signForm.email.$invalid ||
   signForm.password.$dirty && signForm.password.$invalid">

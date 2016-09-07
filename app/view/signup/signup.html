@@ -1,36 +1,20 @@
 <ramble-nav-bar></ramble-nav-bar>
+<test-element></test-element>
 <div class="signup-page">
   <form class="app-signup form-auth" novalidate ng-submit="signupCtrl.signup()">
     <section class="form-group">
       <label for="email">EMAIL : </label>
-      <span class="label label-danger" ng-show=" signupForm.email.$error.required">Required!</span>
+      <span class="label label-danger" ng-show="signupForm.email.$error.required">Required!</span>
       <span class="label label-danger" ng-show="signupForm.$error.email">Invalid email!</span>
-      <input class="form-control" email="email" type="text" ng-model="signupCtrl.user.user">
+      <input class="form-control" email="email" type="email" ng-model="$ctrl.user.username">
     </section>
-    <section class="form-group">
-      <label for="ramble-Signup-password">PASSWORD : </label>
-      <span class="label label-danger" ng-show="submitted &&
-      signupForm.password.$error.required">Required!</span>
-      <input class="form-control"
-             ng-required ng-minlength="3"
-             name="password"
-             type="password"
-             ng-model="signupCtrl.user.password"
-             id="ramble-Signup-password"
-      >
-    </section>
-    <section class="form-group">
-      <label for="confirm">CONFIRM : </label>
-      <input class="form-control" name="confirmPassword" type="password" compare-to="signupCtrl.user.password" ng-model="signupCtrl.user.confirmPassword">
-      <div class="confirmPWMessage" ng-show="signupForm.$error">
-        <span class="confirm-password-message-error" ng-show="signup.confirmPassword.$error.pwmatch">
-         <!-- pwmatch should equal to ctrl.$setValidity('pwmatch',v) in directive) -->
-          Passwords don't match
-        </span>
-      </div>
-    <button type="submit" class="btn btn-defualt">
-      Sign Up
+    <input placeholder="Password" name="thePwd" ng-model="thePwd" required type="password"/>
+    <input placeholder="Check Password" name="chkPwd"  ng-model="chkPwd" type="password" pw-check="chkPwd != thePwd ? 'Passwords don\'t match' : ''" />
+    <div ng-show="signupForm.chkPwd.$invalid && !signupForm.chkPwd.$pristine">Guess again sucka!</div>
+    <button ng-click="$ctrl.checkPass(this.user)" type="submit" class="btn btn-default" ng-disabled="signupForm.email.$dirty && signupForm.email.$invalid ||
+  signupForm.password.$dirty && signupForm.password.$invalid">
     </button>
+    Sign Up
   </form>
   <p>
     Already have an account? <a href="/#/signin">Sign in here!</a>
