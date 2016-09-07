@@ -3,18 +3,16 @@
 <div class="signup-page">
   <form class="app-signup form-auth" novalidate ng-submit="signupCtrl.signup()">
     <section class="form-group">
-      <label for="email">EMAIL : </label>
+      <label for="email">Email: </label>
       <span class="label label-danger" ng-show="signupForm.email.$error.required">Required!</span>
       <span class="label label-danger" ng-show="signupForm.$error.email">Invalid email!</span>
       <input class="form-control" email="email" type="email" ng-model="$ctrl.user.username">
     </section>
     <input placeholder="Password" name="thePwd" ng-model="thePwd" required type="password"/>
     <input placeholder="Check Password" name="chkPwd"  ng-model="chkPwd" type="password" pw-check="chkPwd != thePwd ? 'Passwords don\'t match' : ''" />
-    <div ng-show="signupForm.chkPwd.$invalid && !signupForm.chkPwd.$pristine">Guess again sucka!</div>
+    <div ng-show="signupForm.chkPwd.$invalid && !signupForm.chkPwd.$pristine">The passwords do not match!</div>
     <button ng-click="$ctrl.checkPass(this.user)" type="submit" class="btn btn-default" ng-disabled="signupForm.email.$dirty && signupForm.email.$invalid ||
-  signupForm.password.$dirty && signupForm.password.$invalid">
-    </button>
-    Sign Up
+  signupForm.password.$dirty && signupForm.password.$invalid">Sign Up</button>
   </form>
   <p>
     Already have an account? <a href="/#/signin">Sign in here!</a>
