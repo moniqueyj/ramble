@@ -14,14 +14,13 @@
              ng-required ng-minlength="3"
              name="password"
              type="password"
-             placeholder="Create password"
              ng-model="signupCtrl.user.password"
              id="ramble-Signup-password"
       >
     </section>
     <section class="form-group">
       <label for="confirm">Confirm Password</label><br />
-      <input class="form-control" name="confirmPassword" type="password" compare-to="signupCtrl.user.password" placeholder="Confirm password" ng-model="signupCtrl.user.confirmPassword">
+      <input class="form-control" name="confirmPassword" type="password" compare-to="signupCtrl.user.password" ng-model="signupCtrl.user.confirmPassword">
       <div class="confirmPWMessage" ng-show="signupForm.$error">
         <span class="confirm-password-message-error" ng-show="signup.confirmPassword.$error.pwmatch">
          <!-- pwmatch should equal to ctrl.$setValidity('pwmatch',v) in directive) -->
