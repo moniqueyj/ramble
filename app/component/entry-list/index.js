@@ -22,9 +22,9 @@ function EntryListController($log, $location, rambleService){
       this.list = entries;
     });
   };
-  this.limit = 3;
+  this.limit = 5;
   this.loadMore = function(){
-    var increamented = this.limit + 3;
+    var increamented = this.limit + 5;
     this.limit = increamented > this.list.length ? this.list.length : increamented;
   };
 
@@ -34,9 +34,9 @@ function EntryListController($log, $location, rambleService){
   // var listEntries = listlengthPerPage + 5;
   // this.entriesPerPage = listEntries;
   // this.pagedEntries=
-  
+  //
   // this.pagedEntries = Entry.get(this.currentPage*this.entriesPerPage, this.entriesPerPage);
-
+  //
   // this.entriesPerPage = 5;
   // this.currentPage = 0;
   // this.total = Entry.total(); //Entry should be added as parameter

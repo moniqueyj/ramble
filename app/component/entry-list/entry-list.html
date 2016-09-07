@@ -1,5 +1,5 @@
 <div class="entry-list" ng-init="entryListCtrl.getEntries()">
   <ramble-entry-list-item ng-repeat = "entry in entryListCtrl.list | limitTo :entryListCtrl.limit" entry = "entry"></ramble-entry-list-item>
-  <!-- <ramble-entry-list-item ng-repeat="entry in entryListCtrl.list" entry="entry" /> -->
-  <!-- <button class="btn" href="#" ng-class="nextPageDisabledClass()" ng-click="loadMore()">Load More</button> -->
+  <button class="btn" href="#" ng-click="entryListCtrl.loadMore()">Load More</button>
+  <button class="btn" href="#" ng-click="entryListCtrl.list">Load All</button>
 </div>
