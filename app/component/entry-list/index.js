@@ -35,6 +35,7 @@ function EntryListController($log, $location, rambleService){
     this.limit = this.list.length;
   };
   this.loadLess = function(){
+    console.log('yahoo');
     if(this.limit>=5){
       var reduced = this.limit -5;
       this.limit = 0 <= reduced > this.list.length ? this.list.length : reduced;
