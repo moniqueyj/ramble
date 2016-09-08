@@ -5,7 +5,9 @@
   text-align: left;
 
   h1 {
-    color: $app-grey;
+    font-weight: 200;
+    text-transform: capitalize;
+    color: $app-purple;
     text-align: center;
   }
 
