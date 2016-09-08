@@ -1,24 +1,61 @@
 @import "vendor/normalize.css";
 @import "vendor/font-awesome/scss/font-awesome.scss";
+@import "_theme.scss";
 
 body {
   background-color: #fff;
 }
 
 button {
-  width: 150px;
-  height: 75px;
-  margin: auto;
-
-  border-radius: 5px;
+  font-size: 1em;
+  font-weight: 200;
+  width: 80%;
+  height: 80%;
+  padding: 3%;
+  margin: 10px auto;
+  border: thin solid $app-purple-light;
+  color: $app-purple-light;
   background-color: white;
-  border: 1px solid black;
+  text-align: center;
+
+  &:hover {
+    color: $app-purple;
+    border: thin solid $app-purple;
+  }
 }
 
-input {
-  border-radius: 5px;
-  background-color: white;
-  border: 1px solid black;
+input, textarea {
+  border: none;
+  border-bottom: thin solid $app-light-grey;
+  margin: 5px;
+  margin-left: 0px;
+  font-weight: 200;
+  width: 100%;
+
+  &:focus {
+    border-bottom: thin solid $app-purple;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &::-webkit-input-placeholder {
+    color: $app-text-light;
+    opacity: 1;
+  }
+  &:-moz-placeholder {
+    color: $app-text-light;
+    opacity: 1;
+  }
+  &::-moz-placeholder {
+    color: $app-text-light;
+    opacity: 1;
+  }
+  &:-ms-input-placeholder {
+    color: $app-text-light;
+    opacity: 1;
+  }
 }
 
 a {
@@ -36,8 +73,14 @@ a:hover {
   max-width: 500px;
   max-height: 500px;
   padding: 30px;
-  border: 2px solid black;
+  border: thin solid $app-light-grey;
   border-radius: 5px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.form-group {
+  padding: 10px;
+  width: 100%;
+  color: $app-light-grey;
 }
