@@ -1,5 +1,5 @@
 <aside class="prompt-form">
   <h1>Today's Prompt\n</h1>
   <h3 ng-model=promptCtrl.prompts>{{promptCtrl.prompts}}</h3>
-  <button type="button" name="button"><a href="`${baseUrl}/new/post`">Start New Post</a></button>
+  <button type="button" name="button"><a ng-href="{{ `${baseUrl}/new/post` }}">Start New Post</a></button>
 </aside>

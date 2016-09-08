@@ -8,5 +8,8 @@ const ramble = angular.module('ramble');
 ramble.controller('PromptsController',[PromptsController]);
 
 function PromptsController(){
+  const vm   = this;
+  vm.prompts = require('../../assets/data/prompts.json');
+
 
 }
