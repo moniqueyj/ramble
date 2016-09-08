@@ -8,8 +8,9 @@ const ramble = angular.module('ramble');
 
 ramble.component('rambleNavBar', {
   template: require('./nav.html'),
-  controller: function SignoutCtrl($log, $location, authService){
+  controller: function SignoutCtrl($log, $location, $window, authService) {
     $log.debug('init SignoutCtrl');
+
     this.logout = function(){
       authService.logout()
       .then(()=> $location.path('/signin'));
@@ -19,15 +20,6 @@ ramble.component('rambleNavBar', {
       $location.path('/new/post');
     };
 
-    this.authorized = false;
-    this.checkToken = function() {
-      return authService.getToken()
-      .then(() =>  {
-        this.authorized = true;
-      })
-      .catch(() => {
-        this.authorized = false;
-      });
-    };
+    this.authorized = $window.localStorage.getItem('token') ? true : false;
   }
 });
