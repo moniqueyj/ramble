@@ -24,7 +24,7 @@ button {
   }
 }
 
-input {
+input, textarea {
   border: none;
   border-bottom: thin solid $app-light-grey;
   margin: 5px;

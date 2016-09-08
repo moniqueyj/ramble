@@ -1,10 +1,11 @@
 @import "_theme";
 
 .create-post {
+  margin: 5px;
   .form-group {
     color: $app-light-grey;
+    width: 80%;
     font-weight: 200;
-    margin: 5px;
     padding: 5px;
   }
 
@@ -13,6 +14,11 @@
     &:focus {
       border-bottom: thin solid $app-purple;
     }
+  }
+
+  textarea {
+    font-weight: 200;
+    border: 0;
   }
 }
 

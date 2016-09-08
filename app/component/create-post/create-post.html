@@ -1,14 +1,14 @@
 <div ng-init="newPostCtrl.getEntries()">
   <form class="create-post" novalidate ng-submit="newPostCtrl.createEntry()" >
-  <div class="form-group">
-    <!-- <label for="post-title">TITLE:</label> -->
-    <input type="text" name="post-title" value="Title" placeholder="title" ng-model="newPostCtrl.post.title">
-  </div>
-  <div class="form-group">
-    <!-- <label for="post-body">BODY:</label> -->
-    <input type="text" name="post-body" value="Body" placeholder="body" ng-model="newPostCtrl.post.body">
-  </div>
+    <div class="form-group">
+      <!-- <label for="post-title">TITLE:</label> -->
+      <input type="text" name="post-title" value="Title" placeholder="title" ng-model="newPostCtrl.post.title">
+    </div>
+    <div class="form-group">
+      <!-- <label for="post-body">BODY:</label> -->
+      <textarea name="post-body" value="Body" placeholder="Start Your Post Here" rows="20" ng-model="newPostCtrl.post.body"></textarea>
+    </div>
 
-  <button class="create-post" type="submit">Create Post</button>
-</form>
+    <button class="create-post" type="submit">Create Post</button>
+  </form>
 </div>
