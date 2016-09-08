@@ -1,7 +1,12 @@
 @import "_theme";
 
+.create-post-title {
+  font-weight: bold;
+  font-size: 2em;
+}
 .create-post {
   margin: 5px;
+
   .form-group {
     color: $app-light-grey;
     width: 80%;
@@ -11,6 +16,7 @@
 
   input {
     font-weight: 200;
+    border: 0;
     &:focus {
       border-bottom: thin solid $app-purple;
     }

@@ -32,6 +32,10 @@ input, textarea {
   font-weight: 200;
   width: 100%;
 
+  &:focus {
+    outline: none;
+  }
+
   &::-webkit-input-placeholder {
     color: $app-text-light;
     opacity: 1;
