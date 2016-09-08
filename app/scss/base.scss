@@ -1,8 +1,10 @@
 @import "vendor/normalize.css";
 @import "vendor/font-awesome/scss/font-awesome.scss";
+@import "_theme.scss";
 
 body {
   background-color: #fff;
+  color: $app-light-grey;
 }
 
 button {
