@@ -1,18 +1,17 @@
 <ramble-nav-bar></ramble-nav-bar>
 <test-element></test-element>
 <div class="signup-page">
-  <form class="app-signup form-auth" novalidate ng-submit="signupCtrl.signup()">
+  <form class="app-signup form-auth" name="signupForm" novalidate ng-submit="signupCtrl.signup()">
     <section class="form-group">
       <label for="email">Email: </label>
       <span class="label label-danger" ng-show="signupForm.email.$error.required">Required!</span>
       <span class="label label-danger" ng-show="signupForm.$error.email">Invalid email!</span>
       <input class="form-control" email="email" type="email" ng-model="signupCtrl.user.user">
     </section>
-    <input placeholder="Password" name="thePwd" ng-model="thePwd" required type="password"/>
-    <input placeholder="Check Password" name="chkPwd"  ng-model="signupCtrl.user.password" type="password" pw-check="chkPwd != thePwd ? 'Passwords don\'t match' : ''" />
-    <div ng-show="signupForm.chkPwd.$invalid && !signupForm.chkPwd.$pristine">The passwords do not match!</div>
-    <button ng-click="$ctrl.checkPass(this.user)" type="submit" class="btn btn-default" ng-disabled="signupForm.email.$dirty && signupForm.email.$invalid ||
-  signupForm.password.$dirty && signupForm.password.$invalid">Sign Up</button>
+    <input placeholder="Password" name="thePwd" ng-model="signupCtrl.user.password" required type="password"/>
+    <input placeholder="Check Password" name="chkPwd"  ng-model="signupCtrl.user.confirmPassword" type="password" pw-check="signupCtrl.user.confirmPassword != signupCtrl.user.password ? 'x' : null">
+    <div ng-show="signupForm.chkPwd.$invalid">The passwords do not match!</div>
+  <button ng-click="signupCtrl.checkPass(signupCtrl.user)" type="submit" ng-disabled="signupForm.chkPwd.$invalid">Sign Up</button>
   </form>
   <p>
     Already have an account? <a href="/#/signin">Sign in here!</a>
