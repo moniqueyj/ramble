@@ -2,14 +2,16 @@
 <test-element></test-element>
 <div class="signup-page">
   <form class="app-signup form-auth" name="signupForm" novalidate ng-submit="signupCtrl.signup()">
-    <section class="form-group">
-      <label for="email">Email Address </label><br />
-      <span class="label label-danger" ng-show="submitted && signForm.email.$error.required">Required!</span>
-      <span class="label label-danger" ng-show="submitted && signForm.$error.email">Invalid email!</span>
-      <input class="form-control" email="email" type="text" ng-model="signupCtrl.user.user">
-    </section>
-    <input placeholder="Password" name="thePwd" ng-model="signupCtrl.user.password" required type="password"/>
-    <input placeholder="Check Password" name="chkPwd"  ng-model="signupCtrl.user.confirmPassword" type="password" pw-check="signupCtrl.user.confirmPassword != signupCtrl.user.password ? 'x' : null">
+    <span class="label label-danger" ng-show="submitted && signForm.email.$error.required">Required!</span>
+    <span class="label label-danger" ng-show="submitted && signForm.$error.email">Invalid email!</span>
+    <label for="email">EMAIL</label>
+    <input placeholder="email" class="form-control" email="email" type="text" ng-model="signupCtrl.user.user">
+    <br/>
+    <label for="thePwd">PASSWORD</label>
+    <input placeholder="password" name="thePwd" ng-model="signupCtrl.user.password" required type="password"/>
+    <br/>
+    <label for="chkPwd">CONFIRM PASSWORD</label>
+    <input placeholder="confirm password" name="chkPwd"  ng-model="signupCtrl.user.confirmPassword" type="password" pw-check="signupCtrl.user.confirmPassword != signupCtrl.user.password ? 'x' : null">
     <div ng-show="signupForm.chkPwd.$invalid">The passwords do not match!</div>
   <button ng-click="signupCtrl.checkPass(signupCtrl.user)" type="submit" ng-disabled="signupForm.chkPwd.$invalid">Sign Up</button>
   </form>
