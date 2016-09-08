@@ -1,7 +1,7 @@
-<nav class="nav-bar">
+<nav class="nav-bar" ng-init=$ctrl.checkToken()>
   <div class="nav-bar-logo">
     <img src="asset/image/ramble-icon.png" alt="ramble icon" />
   </div>
-  <button ng-click="$ctrl.newPost()" type="button" name="button" class="create-new">Start New Post</button>
-  <button type="button" name="button" class="signout" ng-click="$ctrl.logout()">Sign Out</button>
+  <button ng-show="$ctrl.authorized" ng-click="$ctrl.newPost()" type="button" name="button" class="create-new">Start New Post</button>
+  <button ng-show="$ctrl.authorized" type="button" name="button" class="signout" ng-click="$ctrl.logout()">Sign Out</button>
 </nav>

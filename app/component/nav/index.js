@@ -18,5 +18,16 @@ ramble.component('rambleNavBar', {
     this.newPost = function(){
       $location.path('/new/post');
     };
+
+    this.authorized = false;
+    this.checkToken = function() {
+      return authService.getToken()
+      .then(() =>  {
+        this.authorized = true;
+      })
+      .catch(() => {
+        this.authorized = false;
+      });
+    };
   }
 });
