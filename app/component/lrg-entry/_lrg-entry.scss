@@ -1,0 +1,24 @@
+@import "_theme.scss";
+
+.lrg-entry {
+  margin: 10px;
+  text-align: left;
+
+  h1 {
+    font-weight: 200;
+    text-transform: capitalize;
+    color: $app-purple;
+    text-align: center;
+  }
+
+  p {
+    text-align: left;
+    font-weight: 200;
+    font-size: 1.25em;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 80%;
+  }
+}
