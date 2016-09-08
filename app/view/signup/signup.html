@@ -3,10 +3,10 @@
 <div class="signup-page">
   <form class="app-signup form-auth" name="signupForm" novalidate ng-submit="signupCtrl.signup()">
     <section class="form-group">
-      <label for="email">Email: </label>
-      <span class="label label-danger" ng-show="signupForm.email.$error.required">Required!</span>
-      <span class="label label-danger" ng-show="signupForm.$error.email">Invalid email!</span>
-      <input class="form-control" email="email" type="email" ng-model="signupCtrl.user.user">
+      <label for="email">Email Address </label><br />
+      <span class="label label-danger" ng-show="submitted && signForm.email.$error.required">Required!</span>
+      <span class="label label-danger" ng-show="submitted && signForm.$error.email">Invalid email!</span>
+      <input class="form-control" email="email" type="text" ng-model="signupCtrl.user.user">
     </section>
     <input placeholder="Password" name="thePwd" ng-model="signupCtrl.user.password" required type="password"/>
     <input placeholder="Check Password" name="chkPwd"  ng-model="signupCtrl.user.confirmPassword" type="password" pw-check="signupCtrl.user.confirmPassword != signupCtrl.user.password ? 'x' : null">
