@@ -10,19 +10,7 @@ ramble.controller('SignupController', ['$log', '$location', 'authService', Signu
 function SignupController($log, $location, authService) {
   $log.debug('init signupCtrl');
 
-  this.showError = false;
-
-  this.checkPass = function (userinfo) {
-    if(userinfo.password === userinfo.confirmPassword) {
-      $log.debug('this.checkPass', userinfo);
-      this.signup(userinfo);
-    } else {
-      $log.debug('this.checkPass else');
-      this.showError = true;
-    }
-  };
-
-  this.signup = function(userinfo) {
+  this.signup = function() {
     $log.debug('init signupCtrl');
     var data = {
       username: this.user.user,
