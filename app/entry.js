@@ -33,7 +33,14 @@ angular.module('ramble', [ngRoute])
     template: require('./view/entry/entry.html')
   })
   .when('/dashboard', {
-    template: require('./view/dashboard/dashboard.html')
+    template: require('./view/dashboard/dashboard.html'),
+    controller: 'DashboardController',
+    controllerAs: 'dashboardCtrl'
+  })
+  .when('/new-post', {
+    template: require('./view/new-post/new-post.html'),
+    controller: 'NewPostController',
+    controllerAs: 'newpostCtrl'
   });
 
 }]);
@@ -52,6 +59,8 @@ require('./component/lrg-entry');
 // angular controllers
 require('./view/signup/signup-controller.js');
 require('./view/signin/signin-controller.js');
+require('./view/dashboard/dashboard-controller.js');
+require('./view/new-post/new-post-controller.js');
 
 //angular directives//
 // require('./directive/signin-directive.js');

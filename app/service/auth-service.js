@@ -18,6 +18,12 @@ function authService($location, $log, $q, $window, $http) {
     return;
   }
 
+  service.checkToken = function() {
+    if($window.localStorage.getItem('token')===null) {
+      $location.path('/signin');
+    }
+  };
+
   service.logout = function() {
     $window.localStorage.removeItem('token');
     token = null;
