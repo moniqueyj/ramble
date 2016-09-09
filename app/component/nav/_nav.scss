@@ -1,16 +1,18 @@
+@import "_theme.scss";
 
 .nav-bar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-content: center;
-  width: auto;
   height: 100px;
-  border: 1px solid black;
-  margin: 10px;
+  margin: 0px;
+  border-bottom: thin solid $app-grey;
+  width: 100;
+  padding: 10px;
 
   .nav-bar-logo {
-    width: 350px;
+    margin: 5px;
+    width: 35%;
     height: auto;
   }
 
@@ -19,27 +21,40 @@
     height: 100px;
   }
 
-  button {
-    width: 150px;
-    height: 75px;
-    margin: auto;
-
-    border-radius: 5px;
-    background-color: white;
-    border: 1px solid black;
-  }
-
   .create-new {
-    color: black;
-  }
+    margin-right: 5px;
+    margin-left: 5px;
+    width: 30%;
+    padding: 5px;
+    color: $app-purple-light;
 
-  .create-new:hover {
-    color: #09E07E;
-    border: 2px solid #09E07E;
+    &:hover {
+      i {
+        color: $app-green;
+      }
+
+      color: $app-green;
+      border: 2px solid $app-green;
+    }
   }
 
   .signout {
-    height: 30px;
-    margin-right: 10px;
+   a {
+     color: $app-text-light;
+
+     &:hover {
+       color: $app-red;
+     }
+   }
+
+    border: 0;
+    width: 30%;
+    margin: auto;
+    text-align: right;
+  }
+
+  .fa-plus {
+    color: $app-purple-light;
+    padding-right: 15px;
   }
 }
