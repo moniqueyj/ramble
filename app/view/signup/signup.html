@@ -1,6 +1,15 @@
 <ramble-nav-bar></ramble-nav-bar>
 <test-element></test-element>
 <div class="signup-page">
+  <section class="about-splash">
+    <div>
+      <h1>Ramble</h1>
+      <h2>write on...</h2>
+    </div>
+  </section>
+  <!-- <section class="about-splash">
+    <img src="./ramble-about-splash.jpg" alt="" />
+  </section> -->
   <form class="app-signup form-auth" name="signupForm" novalidate ng-submit="signupCtrl.signup()">
     <span class="label label-danger" ng-show="submitted && signForm.email.$error.required">Required!</span>
     <span class="label label-danger" ng-show="submitted && signForm.$error.email">Invalid email!</span>

@@ -3,6 +3,7 @@
 // webpack assets
 require('!!file?name=[name].[ext]!./html/index.html');
 require('./scss/base.scss');
+require('./view/signup/_signup.scss')
 
 // npm modules
 const angular = require('angular');
