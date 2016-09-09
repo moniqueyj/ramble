@@ -1,12 +1,13 @@
 <ramble-nav-bar></ramble-nav-bar>
 <div class="signin-page">
-  <section class="about-splash">
+  <section class="about-splash-signin">
     <div>
       <h1>Ramble</h1>
       <h2>write on...</h2>
     </div>
   </section>
   <form novalidate ng-init="signinCtrl.getToken()" ng-submit="signinCtrl.signin()" name="signinForm" class="form-auth">
+    <h3>SIGN IN</h3>
     <label for="email">EMAIL</label>
     <input placeholder="email" class="form-control" name="email" type="email" ng-model="signinCtrl.user.username" required/>
     <br/>

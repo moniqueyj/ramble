@@ -1,18 +1,22 @@
 @import "_theme.scss";
 
-
 p {
   text-align: center;
 }
 
-.about-splash {
-  height: 300px;
-  width: auto;
-  background-image: url("ramble-about-splash.jpg");
+form {
+  h3 {
+    margin: 0px auto 10px auto;
+  }
 }
 
-.about-splash {
+.about-splash-signin {
+  height: 300px;
+  width: auto;
+  background-image: url("./../signup/ramble-about-splash.jpg");
+}
 
+.about-splash-signin {
   div {
     padding: 1px;
     max-width: 400px;
@@ -40,10 +44,6 @@ p {
     margin-left: 175px;
     text-shadow: 2px 2px $app-light-purple;
   }
-  //
-  // div {
-  //   margin-left: 30px;
-  // }
 
   /* Smartphones (portrait and landscape) ----------- */
   @media only screen and (min-width : 320px) and (max-width : 480px) {
