@@ -7,6 +7,4 @@ ramble.controller('NewPostController', ['$log', '$location', 'authService', NewP
 function NewPostController($log, $location, authService) {
   $log.debug('init newpostCtrl');
   this.checkToken = authService.checkToken();
-
-
 }

@@ -8,6 +8,4 @@ ramble.controller('DashboardController', ['$log', '$location', 'authService', Da
 function DashboardController($log, $location, authService) {
   $log.debug('init dashboardCtrl');
   this.checkToken = authService.checkToken();
-
-
 }
