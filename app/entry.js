@@ -31,10 +31,22 @@ angular.module('ramble', [ngRoute])
     template: require('./view/new-post/new-post.html')
   })
   .when('/post/:id', {
-    template: require('./view/entry/entry.html')
+    template: require('./view/entry/entry.html'),
+    controller: 'EntryController',
+    controllerAs: 'entryCtrl'
   })
   .when('/dashboard', {
-    template: require('./view/dashboard/dashboard.html')
+    template: require('./view/dashboard/dashboard.html'),
+    controller: 'DashboardController',
+    controllerAs: 'dashboardCtrl'
+  })
+  .when('/new-post', {
+    template: require('./view/new-post/new-post.html'),
+    controller: 'NewPostController',
+    controllerAs: 'newpostCtrl'
+  })
+  .otherwise({
+    redirectTo: '/signin'
   });
 
 }]);
@@ -53,6 +65,9 @@ require('./component/lrg-entry');
 // angular controllers
 require('./view/signup/signup-controller.js');
 require('./view/signin/signin-controller.js');
+require('./view/dashboard/dashboard-controller.js');
+require('./view/new-post/new-post-controller.js');
+require('./view/entry/entry-controller');
 
 //angular directives//
 // require('./directive/signin-directive.js');
