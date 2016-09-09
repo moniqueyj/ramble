@@ -7,13 +7,13 @@ const ramble = angular.module('ramble');
 
 ramble.component('rambleCreatePost', {
   template: require('./create-post.html'),
-  controller: 'NewPostController',
-  controllerAs: 'newPostCtrl'
+  controller: 'CreatePostController',
+  controllerAs: 'createPostCtrl'
 });
 
-ramble.controller('NewPostController', ['$q', '$log', '$location', 'authService', 'rambleService', NewPostController]);
+ramble.controller('CreatePostController', ['$q', '$log', '$location', 'authService', 'rambleService', CreatePostController]);
 
-function NewPostController($q, $log, $location, authService, rambleService) {
+function CreatePostController($q, $log, $location, authService, rambleService) {
 
   this.createEntry = function() {
     $log.info('creating post', this.post);
