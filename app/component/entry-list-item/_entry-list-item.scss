@@ -3,8 +3,9 @@
 .entry-list-item {
   margin: 10px;
   padding: 10px;
-  border: thin solid $app-purple;
+  border: thin solid $app-text-light;
   border-radius: 5px;
+
 
   container {
     display: flex;
@@ -26,16 +27,23 @@
 
   a {
     text-decoration: none;
-    color: $app-grey;
+    color: $app-purple;
 
     &:hover {
-      color: $app-purple;
+      color: $app-grey;
     }
   }
 
   .fa-trash-o {
+    margin-top: auto;
+    margin-bottom: auto;
+    text-align: center;
     color: rgba(244, 62, 23, 1);
     width: 10%;
     text-align: right;
+    &:hover {
+      color: rgba(228, 0, 0, 1);
+    }
   }
+
 }
