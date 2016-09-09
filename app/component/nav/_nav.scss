@@ -39,8 +39,15 @@
   }
 
   .signout {
+   a {
+     color: $app-text-light;
+
+     &:hover {
+       color: $app-red;
+     }
+   }
+
     border: 0;
-    color: $app-text-light;
     width: 30%;
     margin: auto;
     text-align: right;

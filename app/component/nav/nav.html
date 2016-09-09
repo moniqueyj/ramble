@@ -3,5 +3,5 @@
     <img src="asset/image/ramble-logo.png" alt="ramble icon" />
   </div>
   <button ng-show="$ctrl.authorized" ng-click="$ctrl.newPost()" type="button" name="button" class="create-new"><i class="fa fa-plus" aria-hidden="true"></i>Start New Post</button>
-  <button ng-show="$ctrl.authorized" type="button" name="button" class="signout" ng-click="$ctrl.logout()">Sign Out</button>
+  <div class="signout"><a ng-href="/#/signin"ng-show="$ctrl.authorized" ng-click="$ctrl.logout()">Sign Out</a></div>
 </nav>
